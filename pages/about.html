@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mim | Luiz Gustavo</title>
+    <link rel="icon" type="image/png" href="../img/cruz.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+        
+        <!-- SIDEBAR (LEFT) - Identical to Home -->
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <div class="profile-circle large-avatar">
+                    <img src="../img/myphotu.jpg" alt="Luiz Gustavo" class="avatar">
+                </div>
+                <div class="sidebar-header">
+                    <h1 class="user-name">LUIZ GUSTAVO.</h1>
+                    <p class="user-role" data-i18n="role">DESENVOLVEDOR FULLSTACK</p>
+                </div>
+            </div>
+
+            <div class="sidebar-mid">
+                <p class="bio-text" data-i18n="bio">
+                    Movido por código, curiosidade e vontade de construir soluções digitais que realmente fazem a diferença. Com uma paixão por unir estética e funcionalidade.
+                </p>
+                <div class="availability-badge">
+                    <div class="pulse-dot"></div>
+                    <span>Open To Work</span>
+                </div>
+            </div>
+
+            <div class="sidebar-bottom">
+                <div class="social-circles">
+                    <a href="https://github.com/tioliveiraa" target="_blank" class="circle-icon" title="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                    <a href="https://linkedin.com/in/tioliveiraa" target="_blank" class="circle-icon" title="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                    <a href="https://instagram.com/tioliveiraa" target="_blank" class="circle-icon" title="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                    <a href="http://lattes.cnpq.br/" target="_blank" class="circle-icon" title="Lattes">
+                        <span style="font-family: var(--font-heading); font-weight: 800; font-size: 14px;">L</span>
+                    </a>
+                </div>
+
+                <div class="quote-section">
+                    <p class="quote-text" data-i18n="quote">"SÓ O CONHECIMENTO LIBERTA O HOMEM"</p>
+                    <p class="quote-auth">Dr. Enéas Ferreira Carneiro</p>
+                </div>
+
+                <div class="footer-simple">
+                    <p data-i18n="footer-rights">TODOS OS DIREITOS RESERVADOS - LUIZ GUSTAVO DE OLIVEIRA | ARTES VISUAIS FEITAS COM IA</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT (RIGHT) -->
+        <main class="main-content">
+            <header class="top-nav">
+                <div class="nav-date">
+                    <a href="../index.html" class="glass-nav-pill home-return-btn" style="text-decoration: none; color: var(--text-main); font-weight: 700; display: inline-flex; gap: 8px;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                        <span data-i18n="back-home">Voltar à Home</span>
+                    </a>
+                </div>
+                <div class="nav-controls glass-nav-pill">
+                    <button class="theme-tab" id="theme-toggle-btn" title="Light/Dark Mode">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5" />
+                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                        </svg>
+                    </button>
+                    <div class="lang-switcher">
+                        <button class="lang-tab active" data-lang="pt">PT</button>
+                        <button class="lang-tab" data-lang="en">EN</button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- SCROLLABLE SUBPAGE CONTAINER -->
+            <div class="bento-card subpage-container">
+                <div class="subpage-header">
+                    <h2 data-i18n="about-title" style="font-family: var(--font-heading); font-size: 38px; font-weight: 800; color: var(--text-main);">Especialista Digital 🧠</h2>
+                    <p data-i18n="about-subtitle" style="color: var(--text-dim); margin-top: 8px;">Descubra mais sobre minha base lógica, disciplinar e acadêmica.</p>
+                </div>
+
+                <!-- NEW WATERFALL LAYOUT -->
+                <div class="about-waterfall-layout">
+                    
+                    <!-- Bio Full-width Pane -->
+                    <div class="waterfall-card bio-pane">
+                        <div class="waterfall-header">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            <h3 data-i18n="txt-vision">Visão Profissional</h3>
+                        </div>
+                        <div class="bio-text-block">
+                            <p data-i18n="txt-bio1">Sou um Desenvolvedor apaixonado por orquestrar tecnologias robustas. Minha especialidade reside na criação de ecossistemas completos, navegando desde integrações de Front-End reativas até infraestruturas complexas de Back-End.</p>
+                            <p data-i18n="txt-bio2">Além do desenvolvimento Web clássico, trago um profundo fascínio pelas fronteiras da Inteligência Artificial. Implementar ferramentas de Machine Learning que geram automação e eficiência real em gargalos operacionais é o meu ecossistema natural de trabalho.</p>
+                        </div>
+                    </div>
+
+                    <!-- Army Split-Pane -->
+                    <div class="waterfall-card army-pane">
+                        <div class="army-visual-side">
+                            <div class="shield-circle">
+                                <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            </div>
+                        </div>
+                        <div class="army-text-side">
+                            <div class="waterfall-header">
+                                <h3 data-i18n="txt-army-title">Experiência Militar</h3>
+                            </div>
+                            <h4 class="army-corp-name" data-i18n="txt-army-corp">Exército Brasileiro</h4>
+                            <p data-i18n="txt-army-desc">Disciplina imutável, foco sob pressão e liderança tática. A vivência militar forjou a minha capacidade analítica mental e o compromisso extremo com a entrega de resultados, características que levo intrinsecamente para o desenvolvimento de software.</p>
+                        </div>
+                    </div>
+
+                    <!-- Academic Horizontal Timeline Pane -->
+                    <div class="waterfall-card edu-pane">
+                        <div class="waterfall-header" style="justify-content: center; margin-bottom: 32px;">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                            <h3 data-i18n="txt-edu-title">Trajetória Acadêmica</h3>
+                        </div>
+                        
+                        <div class="horizontal-timeline">
+                            <!-- Node 1 -->
+                            <div class="timeline-node">
+                                <div class="node-marker done">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--bg-deep)" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                </div>
+                                <div class="node-content">
+                                    <h4 data-i18n="txt-edu-tech">D. de Sistemas</h4>
+                                    <span class="status-badge" data-i18n="txt-edu-done">Técnico Concluído</span>
+                                </div>
+                            </div>
+
+                            <!-- Line -->
+                            <div class="timeline-connector"></div>
+
+                            <!-- Node 2 -->
+                            <div class="timeline-node">
+                                <div class="node-marker pulsing"></div>
+                                <div class="node-content right">
+                                    <h4 data-i18n="txt-edu-ads">Análise e Desenvolvimento de Sistemas</h4>
+                                    <span class="status-badge active-badge" data-i18n="txt-edu-cursing">Cursando Ensino Superior</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Extra / Languages Banner -->
+                    <div class="waterfall-card lang-pane">
+                        <div class="lang-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                        </div>
+                        <div class="lang-text">
+                            <h3 data-i18n="txt-lang-eng">Inglês Intermediário</h3>
+                            <p data-i18n="txt-lang-desc">Capacidade completa de leitura de documentações técnicas, codificação global e comunicação fundamental para resolução de problemas em fóruns abertos.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Background Decoration -->
+    <div class="decor-corner"></div>
+
+    <script src="../scripts/translations.js"></script>
+    <script src="../scripts/script.js"></script>
+    <script src="../scripts/starfield.js"></script>
+</body>
+
+</html>
