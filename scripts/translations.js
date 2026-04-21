@@ -43,7 +43,8 @@ window.translations = {
         "txt-edu-tech": "Desenvolvimento de Sistemas (SENAI Taubaté)",
         "txt-edu-done": "Técnico Concluído",
         "txt-lang-eng": "Inglês Intermediário",
-        "txt-lang-desc": "Consumo confortavelmente documentações no idioma nativo, me comunico com tranquilidade em fóruns globais (como StackOverflow e GitHub) e escrevo código sem barreiras estruturais."
+        "txt-lang-desc": "Consumo confortavelmente documentações no idioma nativo, me comunico com tranquilidade em fóruns globais (como StackOverflow e GitHub) e escrevo código sem barreiras estruturais.",
+        "download-cv": "Baixar Currículo"
     },
     en: {
         "role": "Fullstack Developer",
@@ -92,6 +93,7 @@ window.translations = {
         "txt-edu-tech": "Systems Development (SENAI Taubaté)",
         "txt-edu-done": "Tech Degree Completed",
         "txt-lang-eng": "Intermediate English",
-        "txt-lang-desc": "I comfortably consume documentation in the native language, communicate smoothly on global forums (like StackOverflow and GitHub), and write code without any structural barriers."
+        "txt-lang-desc": "I comfortably consume documentation in the native language, communicate smoothly on global forums (like StackOverflow and GitHub), and write code without any structural barriers.",
+        "download-cv": "Download CV"
     }
 };
