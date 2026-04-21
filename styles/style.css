@@ -29,14 +29,239 @@
     --text-dim: #555555;
 }
 
-/* Light Theme UI Corrections */
-:root.light-theme .white-arrow { background: var(--blue-accent); color: #fff; }
-:root.light-theme .mini-arrow { border: 1px solid rgba(0,0,0,0.1); }
-:root.light-theme .bento-card { box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
-:root.light-theme .card-content-overlay { background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.9)); }
-:root.light-theme .card-content-overlay h3 { color: var(--text-main); }
-:root.light-theme .card-about h3, :root.light-theme .card-about p { text-shadow: none; }
-:root.light-theme .about-icon-header { color: var(--text-main); }
+/* ==========================================================================
+   LIGHT THEME — Complete Override
+   ========================================================================== */
+
+/* ── Core Bento Cards ── */
+:root.light-theme .bento-card {
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07), 0 0 0 1px rgba(0,0,0,0.06);
+    background: #ffffff;
+}
+:root.light-theme .bento-card:hover {
+    border-color: rgba(0,0,0,0.15);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+/* ── Cards with Image Backgrounds ── */
+/* Keep dark overlay on image cards so text stays readable over photos */
+:root.light-theme .card-projects .card-content-overlay,
+:root.light-theme .card-contact .card-content-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.1) 100%);
+}
+:root.light-theme .card-projects .card-title,
+:root.light-theme .card-contact .card-title { color: #fff; }
+
+/* ── Stack Blue Card ── */
+:root.light-theme .card-stack-blue { background: var(--blue-accent) !important; }
+:root.light-theme .card-stack-blue .card-title { color: #fff; }
+:root.light-theme .card-stack-blue .mini-arrow { background: rgba(255,255,255,0.9); color: var(--blue-accent); }
+
+/* ── About Card (image bg) keeps dark overlay ── */
+:root.light-theme .card-about .card-content-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.05) 60%);
+}
+:root.light-theme .card-about h3,
+:root.light-theme .card-about p { color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+
+/* ── Mini Arrows ── */
+:root.light-theme .mini-arrow {
+    background: rgba(0,0,0,0.08);
+    color: #111;
+    border: 1px solid rgba(0,0,0,0.12);
+}
+:root.light-theme .white-arrow { background: var(--blue-accent); color: #fff; border: none; }
+
+/* ── Navigation Pill ── */
+:root.light-theme .glass-nav-pill {
+    background: rgba(255,255,255,0.85);
+    border-color: rgba(0,0,0,0.1);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+:root.light-theme .lang-tab { color: #444; }
+:root.light-theme .lang-tab.active { background: #111; color: #fff; border-color: #111; }
+:root.light-theme .theme-tab { background: rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.1); }
+:root.light-theme .nav-date { color: #666; }
+
+/* ── Home Return Button (subpages) ── */
+:root.light-theme .home-return-btn {
+    background: rgba(255,255,255,0.85) !important;
+    border-color: rgba(0,0,0,0.1) !important;
+    color: #111 !important;
+}
+
+/* ── Subpage Container ── */
+:root.light-theme .subpage-container {
+    background: rgba(0,0,0,0.02);
+    border-color: rgba(0,0,0,0.08);
+}
+:root.light-theme .subpage-container::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.15);
+}
+:root.light-theme .subpage-header h2 { color: #111; }
+:root.light-theme .subpage-header p { color: #555; }
+
+/* ── Projects Page Cards ── */
+:root.light-theme .project-showcase-card {
+    background: rgba(0,0,0,0.025);
+    border-color: rgba(0,0,0,0.08);
+}
+:root.light-theme .project-showcase-card:hover {
+    background: rgba(0,0,0,0.05);
+    border-color: rgba(0,0,0,0.14);
+}
+:root.light-theme .tech-tags span {
+    background: rgba(0,0,0,0.07);
+    color: #222;
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* ── Stack Page ── */
+:root.light-theme .tech-list-card {
+    background: rgba(0,0,0,0.02);
+    border-color: rgba(0,0,0,0.08);
+}
+:root.light-theme .tech-list-item {
+    border-bottom-color: rgba(0,0,0,0.07);
+}
+:root.light-theme .tech-item-header h3 { color: #111; }
+:root.light-theme .tech-list-item p { color: #555; }
+:root.light-theme .tech-pill-group span {
+    background: rgba(0,0,0,0.06);
+    border-color: rgba(0,0,0,0.1);
+    color: #333;
+}
+:root.light-theme .tech-icon-box {
+    background: #f0f0f0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* ── Contact Page Cards ── */
+:root.light-theme .contact-page-container {
+    background: rgba(0,0,0,0.02);
+    border-color: rgba(0,0,0,0.08);
+}
+:root.light-theme .contact-card {
+    background: rgba(0,0,0,0.025);
+    border-color: rgba(0,0,0,0.08);
+}
+:root.light-theme .contact-card:hover {
+    background: rgba(0,0,0,0.05);
+    border-color: rgba(0,0,0,0.14);
+    transform: translateY(-4px);
+}
+:root.light-theme .contact-text h3,
+:root.light-theme .contact-content-center h3 { color: #111; }
+:root.light-theme .contact-text p,
+:root.light-theme .contact-content-center span { color: #555; }
+:root.light-theme .contact-hover-detail { color: #333; }
+:root.light-theme .contact-icon { color: #333; }
+
+/* ── About Page (Waterfall) ── */
+:root.light-theme .waterfall-card {
+    background: rgba(0,0,0,0.025);
+    border-color: rgba(0,0,0,0.08);
+}
+:root.light-theme .waterfall-header h3 { color: #111; }
+:root.light-theme .waterfall-header span { color: #555; }
+:root.light-theme .bio-text-block p { color: #444; }
+:root.light-theme .army-visual-side { border-color: rgba(0,0,0,0.08); }
+:root.light-theme .army-icon-wrap { color: #222; }
+:root.light-theme .army-corp-name {
+    background: rgba(0,0,0,0.06);
+    color: #222;
+}
+:root.light-theme .army-text-side p { color: #444; }
+:root.light-theme .node-badge {
+    background: rgba(0,0,0,0.06);
+    color: #333;
+    border-color: rgba(0,0,0,0.1);
+}
+:root.light-theme .node-content h4 { color: #111; }
+:root.light-theme .node-content p { color: #555; }
+:root.light-theme .timeline-connector { background: rgba(0,0,0,0.1); }
+:root.light-theme .lang-text h3 { color: #111; }
+:root.light-theme .lang-text p { color: #444; }
+:root.light-theme .lang-flag { filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15)); }
+
+/* ── Quote + Footer ── */
+:root.light-theme .quote-text { color: #111; }
+:root.light-theme .quote-auth { color: #666; }
+:root.light-theme .quote-section { border-top-color: rgba(0,0,0,0.1); }
+:root.light-theme .footer-simple { color: #999; }
+:root.light-theme .circle-icon { border-color: rgba(0,0,0,0.12); color: #555; }
+:root.light-theme .circle-icon:hover { border-color: rgba(0,0,0,0.25); color: #111; }
+
+/* ── About Title Header ── */
+:root.light-theme .about-icon-header { color: #111; }
+
+/* ── About: Timeline ── */
+:root.light-theme .node-marker {
+    background: #f5f5f7;
+    border-color: rgba(0,0,0,0.2);
+}
+:root.light-theme .node-marker svg { color: #333; }
+:root.light-theme .status-badge {
+    background: rgba(0,0,0,0.05);
+    color: #444;
+    border-color: rgba(0,0,0,0.12);
+}
+:root.light-theme .status-badge.active-badge {
+    background: rgba(45,91,255,0.08);
+    color: var(--blue-accent);
+    border-color: rgba(45,91,255,0.3);
+}
+:root.light-theme .lang-icon {
+    background: rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* ── Contact: Card-specific colors ── */
+:root.light-theme .email-card { border-left: 3px solid #ef4444; }
+:root.light-theme .whatsapp-card { border-left: 3px solid #22c55e; }
+:root.light-theme .telegram-card { border-left: 3px solid #3b82f6; }
+:root.light-theme .discord-card {
+    background: rgba(88, 101, 242, 0.06) !important;
+    border-color: rgba(88, 101, 242, 0.25) !important;
+}
+:root.light-theme .hover-slide-text { color: #555; }
+:root.light-theme .contact-card .contact-bg-glow { opacity: 0 !important; }
+
+/* ── Stack: Tech list separators ── */
+:root.light-theme .tech-list-item { border-bottom-color: rgba(0,0,0,0.07); }
+
+/* ── Projects: Card backgrounds + hover ── */
+:root.light-theme .project-showcase-card {
+    background: #fff;
+    border-color: rgba(0,0,0,0.08);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+:root.light-theme .project-showcase-card:hover {
+    background: #fafafa;
+    border-color: rgba(0,0,0,0.14);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* ── Waterfall card hover ── */
+:root.light-theme .waterfall-card:hover {
+    border-color: rgba(0,0,0,0.14);
+    background: rgba(0,0,0,0.04);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+/* ── Bento card hover ── */
+:root.light-theme .bento-card:hover { border-color: rgba(0,0,0,0.18); }
+
+/* ── Projects content grid ── */
+:root.light-theme .projects-content-grid { gap: 20px; }
+
+/* ── Subpage header accent line ── */
+:root.light-theme .subpage-header h2 {
+    background: linear-gradient(90deg, #111 0%, #2d5bff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 
 #bg-starfield {
     position: fixed;
@@ -244,6 +469,20 @@ body {
     grid-column: span 12; grid-row: span 2;
     padding: 48px; overflow-y: auto; overflow-x: hidden;
     display: flex; flex-direction: column; gap: 40px;
+}
+.subpage-h2 {
+    font-family: var(--font-heading);
+    font-size: 38px;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+}
+.subpage-header p {
+    color: var(--text-dim);
+    font-size: 16px;
+    margin-top: 8px;
+    line-height: 1.6;
 }
 
 .subpage-container::-webkit-scrollbar { width: 8px; }
