@@ -12,8 +12,8 @@ window.translations = {
         "back-home": "Voltar à Home",
         "portfolio-title": "Portfólio de Projetos",
         "portfolio-desc": "Estes são os principais produtos digitais e arquiteturas de ML que desenvolvi recentemente.",
-        "parish-title": "Sistema de Gestão Paroquial",
-        "parish-desc": "Automação completa da tesouraria, registros matrimoniais e batismais, construída para gerar maior eficiência preditiva e transparência logística.",
+        "parish-title": "Sistema de Gestão para Inscrições de Catequese",
+        "parish-desc": "Plataforma desenvolvida para simplificar e automatizar o processo de inscrições, turmas e acompanhamento dos catequizandos da paróquia.",
         "shelf-title": "ShelfScanner AI",
         "shelf-desc": "Código desenvolvido em Python. Simulação de uma biblioteca. Utilizado para filtrar e pesquisar livros semelhantes e do mesmo autor em relação ao sugerido.",
         "stack-title": "Minhas Ferramentas",
@@ -44,7 +44,12 @@ window.translations = {
         "txt-edu-done": "Técnico Concluído",
         "txt-lang-eng": "Inglês Intermediário",
         "txt-lang-desc": "Consumo confortavelmente documentações no idioma nativo, me comunico com tranquilidade em fóruns globais (como StackOverflow e GitHub) e escrevo código sem barreiras estruturais.",
-        "download-cv": "Baixar Currículo"
+        "download-cv": "Baixar Currículo",
+        "churn-desc": "Modelagem preditiva utilizando algoritmos de classificação para identificar padrões de comportamento e prever o churn de clientes, auxiliando na retenção estratégica.",
+        "view-project": "Acessar",
+        "in-development": "Em Desenvolvimento",
+        "proj-mgmt-title": "Sistema de Gestão de Projetos — Cliente/Empresa",
+        "proj-mgmt-desc": "Plataforma corporativa de ponta a ponta desenvolvida para otimizar a comunicação, entregáveis e cronogramas de projetos entre a empresa e seus clientes."
     },
     en: {
         "role": "Fullstack Developer",
@@ -59,8 +64,8 @@ window.translations = {
         "back-home": "Back to Home",
         "portfolio-title": "Projects Portfolio 🚀",
         "portfolio-desc": "These are the main digital products and ML architectures I have recently developed.",
-        "parish-title": "Parish Management System",
-        "parish-desc": "Complete automation of the treasury, marriage, and baptism records, built to generate greater predictive efficiency and logistical transparency.",
+        "parish-title": "Catechesis Registration Management System",
+        "parish-desc": "Platform developed to simplify and automate the registration process, class management, and tracking of catechism students at the parish.",
         "shelf-title": "ShelfScanner AI",
         "shelf-desc": "Code developed in Python. Library simulation used to filter and search for similar books and books by the same author based on the suggested one.",
         "stack-title": "My Tools 🛠️",
@@ -94,6 +99,11 @@ window.translations = {
         "txt-edu-done": "Tech Degree Completed",
         "txt-lang-eng": "Intermediate English",
         "txt-lang-desc": "I comfortably consume documentation in the native language, communicate smoothly on global forums (like StackOverflow and GitHub), and write code without any structural barriers.",
-        "download-cv": "Download CV"
+        "download-cv": "Download CV",
+        "churn-desc": "Predictive modeling using classification algorithms to identify behavioral patterns and forecast customer attrition, enabling strategic retention actions.",
+        "view-project": "View Project",
+        "in-development": "In Development",
+        "proj-mgmt-title": "Project Management System — Client/Company",
+        "proj-mgmt-desc": "End-to-end corporate platform developed to optimize communication, deliverables, and project timelines between the company and its clients."
     }
 };

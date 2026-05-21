@@ -253,6 +253,20 @@
     border-color: rgba(0,0,0,0.14);
     box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
+:root.light-theme .project-hover-overlay {
+    background: rgba(255, 255, 255, 0.45);
+}
+:root.light-theme .hover-btn {
+    background: #111111;
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+:root.light-theme .project-badge {
+    background: rgba(255, 255, 255, 0.85);
+    color: #ff9900;
+    border-color: rgba(255, 153, 0, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
 
 /* ── Waterfall card hover ── */
 :root.light-theme .waterfall-card:hover {
@@ -425,8 +439,20 @@ body {
 .bento-card:hover .mini-arrow svg { transform: rotate(45deg); }
 
 /* Full Background Content Styles */
-.bento-card-full-bg .card-bg { position: absolute; inset: 0; z-index: 1; transition: 0.8s ease; }
-.bento-card-full-bg:hover .card-bg { transform: scale(1.05); }
+.bento-card-full-bg .card-bg,
+.bento-card-full-bg .card-bg-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    transition: 0.8s ease;
+}
+.bento-card-full-bg:hover .card-bg,
+.bento-card-full-bg:hover .card-bg-video {
+    transform: scale(1.05);
+}
 
 .card-content-overlay {
     position: relative; z-index: 2; padding: 32px;
@@ -502,36 +528,10 @@ body {
 .subpage-container::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
 .subpage-container::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
 
-.project-showcase-card {
-    display: flex; gap: 32px; background: rgba(255,255,255,0.02);
-    border: 1px solid var(--card-border); border-radius: 24px;
-    padding: 24px; transition: 0.3s;
-}
-.project-showcase-card:hover { border-color: rgba(255,255,255,0.1); transform: translateY(-5px); background: rgba(255,255,255,0.04); }
-
-.project-graphic { width: 45%; border-radius: 16px; overflow: hidden; flex-shrink: 0; }
-.project-graphic img { width: 100%; height: 100%; object-fit: cover; }
-
-.project-details { display: flex; flex-direction: column; justify-content: center; gap: 16px; }
-.project-details h3 { font-family: var(--font-heading); font-size: 26px; color: var(--text-main); }
-.project-details p { font-size: 15px; color: var(--text-dim); line-height: 1.65; }
-
-.tech-tags { display: flex; gap: 8px; flex-wrap: wrap; }
-    padding: 24px; transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
-}
-.project-showcase-card:hover { border-color: rgba(255,255,255,0.15); transform: translateY(-5px); background: rgba(255,255,255,0.04); }
-
-.project-graphic { width: 45%; border-radius: 16px; overflow: hidden; flex-shrink: 0; }
-.project-graphic img { width: 100%; height: 100%; object-fit: cover; }
-
-.project-details { display: flex; flex-direction: column; justify-content: center; gap: 16px; }
-.project-details h3 { font-family: var(--font-heading); font-size: 24px; color: var(--text-main); }
-.project-details p { font-size: 14px; color: var(--text-dim); line-height: 1.6; }
-
-.tech-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; }
-.tech-tags span {
-    font-family: var(--font-mono); font-size: 12px; padding: 4px 12px;
-    background: rgba(255,255,255,0.1); color: var(--text-main); border-radius: 20px;
+.projects-content-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 }
 
 /* ==========================================================================
@@ -723,12 +723,90 @@ body {
 .project-showcase-card {
     display: flex; gap: 32px; background: rgba(255,255,255,0.02);
     border: 1px solid var(--card-border); border-radius: 24px;
-    padding: 24px; transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    padding: 24px; transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    text-decoration: none; color: inherit;
+    position: relative;
 }
-.project-showcase-card:hover { border-color: rgba(255,255,255,0.15); transform: translateY(-5px); background: rgba(255,255,255,0.04); }
+.project-showcase-card:hover {
+    border-color: rgba(255,255,255,0.15);
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.04);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
 
-.project-graphic { width: 45%; border-radius: 16px; overflow: hidden; flex-shrink: 0; }
-.project-graphic img { width: 100%; height: 100%; object-fit: cover; }
+.project-graphic {
+    width: 45%; border-radius: 16px; overflow: hidden;
+    flex-shrink: 0; position: relative;
+}
+.project-graphic img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.project-showcase-card:hover .project-graphic img {
+    transform: scale(1.06);
+}
+
+/* Dynamic Hover Overlay & Button */
+.project-hover-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 5;
+}
+.project-showcase-card:hover .project-hover-overlay {
+    opacity: 1;
+}
+
+.hover-btn {
+    background: #ffffff;
+    color: #000000;
+    padding: 10px 22px;
+    border-radius: 24px;
+    font-size: 13px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    transform: translateY(12px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.project-showcase-card:hover .hover-btn {
+    transform: translateY(0);
+}
+.hover-btn svg {
+    transition: transform 0.3s ease;
+}
+.hover-btn:hover svg {
+    transform: translate(2px, -2px);
+}
+
+/* In-Development Badge */
+.project-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: var(--orange-accent);
+    border: 1px solid rgba(255, 153, 0, 0.35);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    z-index: 6;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
 
 .project-details { display: flex; flex-direction: column; justify-content: center; gap: 16px; }
 .project-details h3 { font-family: var(--font-heading); font-size: 24px; color: var(--text-main); }
