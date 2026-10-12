@@ -619,6 +619,7 @@ body {
     .timeline-connector { display: none; }
     .node-marker { transform: translateX(-36px); flex-shrink: 0; }
     .node-content { text-align: left; transform: translateX(-25px); }
+    .node-content .edu-institution { justify-content: flex-start; }
     .lang-wrap { flex-direction: column; align-items: flex-start; gap: 16px; }
 
     /* About Bento old classes (kept for safety) */
@@ -816,6 +817,41 @@ body {
 .project-details { display: flex; flex-direction: column; justify-content: center; gap: 16px; }
 .project-details h3 { font-family: var(--font-heading); font-size: 24px; color: var(--text-main); }
 .project-details p { font-size: 14px; color: var(--text-dim); line-height: 1.6; }
+
+.project-academic-note {
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 3px solid #60a5fa;
+    border-radius: 4px 8px 8px 4px;
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.project-academic-note .note-tag {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #60a5fa;
+}
+.project-academic-note .note-desc {
+    font-size: 13px !important;
+    color: var(--text-dim);
+    line-height: 1.5 !important;
+    margin: 0;
+}
+
+:root.light-theme .project-academic-note {
+    background: rgba(96, 165, 250, 0.08);
+    border-left-color: #2563eb;
+}
+:root.light-theme .project-academic-note .note-tag {
+    color: #2563eb;
+}
+:root.light-theme .project-academic-note .note-desc {
+    color: #4b5563;
+}
 
 .tech-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; }
 .tech-tags span {
@@ -1175,28 +1211,44 @@ body {
     width: 30%; background: linear-gradient(135deg, rgba(85, 107, 47, 0.05), rgba(0,0,0,0));
     display: flex; justify-content: center; align-items: center; border-right: 1px solid var(--card-border);
 }
-.shield-circle { width: 90px; height: 90px; border-radius: 50%; background: rgba(85, 107, 47, 0.1); border: 1px solid rgba(85, 107, 47, 0.3); display: flex; justify-content: center; align-items: center; color: #7A8B5C; }
+.shield-circle { width: 90px; height: 90px; border-radius: 50%; background: rgba(85, 107, 47, 0.1); border: 1px solid rgba(85, 107, 47, 0.3); display: flex; justify-content: center; align-items: center; color: #7A8B5C; overflow: hidden; padding: 12px; }
+.army-logo-img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
 .army-text-side { width: 70%; padding: 40px; display: flex; flex-direction: column; justify-content: center; }
-.army-corp-name { font-family: var(--font-mono); font-size: 16px; font-weight: 700; margin-bottom: 12px; color: var(--text-main); background: rgba(255,255,255,0.05); display: inline-block; padding: 6px 12px; border-radius: 8px; width: fit-content; }
-.army-text-side p { font-size: 15px; color: var(--text-dim); line-height: 1.7; }
+.army-corp-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+.army-corp-name { font-family: var(--font-mono); font-size: 16px; font-weight: 700; margin-bottom: 0; color: var(--text-main); background: rgba(255,255,255,0.05); display: inline-block; padding: 6px 12px; border-radius: 8px; width: fit-content; }
+.army-period-badge { font-family: var(--font-mono); font-size: 13px; font-weight: 600; color: #7A8B5C; background: rgba(85, 107, 47, 0.12); border: 1px solid rgba(85, 107, 47, 0.3); padding: 5px 12px; border-radius: 8px; }
+.army-text-side p { font-size: 15px; color: var(--text-dim); line-height: 1.7; margin-bottom: 16px; }
+.army-activities-title { font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--text-main); margin-bottom: 10px; margin-top: 8px; }
+.army-activities-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.army-activities-list li { font-size: 14px; color: var(--text-dim); line-height: 1.6; position: relative; padding-left: 18px; }
+.army-activities-list li::before { content: "•"; position: absolute; left: 0; color: #7A8B5C; font-weight: bold; font-size: 16px; line-height: 1.4; }
 
 /* Academic Horizontal Timeline Pane */
 .edu-pane { flex-direction: column; align-items: center; text-align: center; }
 .horizontal-timeline {
-    display: flex; align-items: center; justify-content: center; width: 100%; max-width: 700px;
+    display: flex; align-items: flex-start; justify-content: center; width: 100%; max-width: 700px;
     margin-top: 24px; position: relative; gap: 16px;
 }
-.timeline-node { display: flex; flex-direction: column; align-items: center; width: 200px; gap: 16px; z-index: 2; }
-.timeline-connector { height: 2px; background: rgba(255,255,255,0.1); flex-grow: 1; position: relative; margin: 0 16px; transform: translateY(-40px); }
+.timeline-node { display: flex; flex-direction: column; align-items: center; width: 220px; gap: 16px; z-index: 2; }
+.timeline-connector { height: 2px; background: rgba(255,255,255,0.1); flex-grow: 1; position: relative; margin: 0 16px; margin-top: 15px; }
 
-.node-marker { width: 32px; height: 32px; border-radius: 50%; background: var(--bg-deep); border: 2px solid rgba(255,255,255,0.2); display: flex; justify-content: center; align-items: center; transition: 0.3s; }
+.node-marker { width: 32px; height: 32px; border-radius: 50%; background: var(--bg-deep); border: 2px solid rgba(255,255,255,0.2); display: flex; justify-content: center; align-items: center; transition: 0.3s; flex-shrink: 0; }
 .node-marker.done { background: var(--text-main); border-color: var(--text-main); }
 .node-marker.pulsing { border-color: var(--text-main); animation: pulseBorder 2s infinite; }
 @keyframes pulseBorder { 0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.4); } 70% { box-shadow: 0 0 0 10px rgba(255,255,255,0); } 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); } }
 
-.node-content h4 { font-family: var(--font-mono); font-size: 14px; font-weight: 700; margin-bottom: 12px; color: var(--text-main); }
-.status-badge { font-size: 11px; font-weight: 700; padding: 6px 12px; border-radius: 12px; background: rgba(255,255,255,0.05); color: var(--text-dim); }
-.status-badge.active-badge { border: 1px solid rgba(255,255,255,0.3); color: var(--text-main); }
+.node-content { display: flex; flex-direction: column; align-items: center; width: 100%; }
+.edu-institution { display: flex; justify-content: center; align-items: center; height: 32px; margin-bottom: 12px; }
+.edu-logo-img { height: 26px; max-width: 110px; object-fit: contain; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25)); transition: transform 0.2s ease; }
+.timeline-node:hover .edu-logo-img { transform: scale(1.05); }
+.node-content h4 { font-family: var(--font-mono); font-size: 14px; font-weight: 700; margin-bottom: 12px; color: var(--text-main); min-height: 40px; display: flex; align-items: center; justify-content: center; line-height: 1.4; text-align: center; }
+.status-badge { font-size: 11px; font-weight: 700; padding: 6px 14px; border-radius: 12px; background: rgba(255,255,255,0.05); color: var(--text-dim); white-space: nowrap; transition: all 0.3s ease; }
+.status-badge.badge-completed { background: rgba(34, 197, 94, 0.12); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.35); }
+.status-badge.badge-progress { background: rgba(249, 115, 22, 0.12); color: #fb923c; border: 1px solid rgba(249, 115, 22, 0.38); }
+.node-marker.done { background: #22c55e; border-color: #22c55e; }
+.node-marker.done svg { stroke: #0d1117; }
+.node-marker.pulsing { border-color: #f97316; animation: pulseOrange 2s infinite; }
+@keyframes pulseOrange { 0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.5); } 70% { box-shadow: 0 0 0 10px rgba(249, 115, 22, 0); } 100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); } }
 
 /* Language Pane */
 .lang-pane { flex-direction: row; align-items: center; gap: 32px; }
