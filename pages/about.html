@@ -196,6 +196,61 @@
                         </div>
                     </div>
 
+                    <!-- Certificates Pane -->
+                    <div class="waterfall-card certs-pane">
+                        <div class="waterfall-header" style="justify-content: center; margin-bottom: 24px;">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15l-2 5l4-2l4 2l-2-5"/><circle cx="12" cy="9" r="6"/></svg>
+                            <h3 data-i18n="txt-certs-title">Certificações & Conquistas</h3>
+                        </div>
+
+                        <div class="certs-grid">
+                            <!-- Certificate 1: Node.js -->
+                            <div class="cert-card cert-card-modal" data-preview="../img/nodejs.jpg" data-title="Node.js - Certificado">
+                                <div class="cert-img-wrap">
+                                    <img src="../img/nodejs.jpg" alt="Certificado Node.js" class="cert-img">
+                                    <div class="cert-zoom-icon">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                                    </div>
+                                </div>
+                                <div class="cert-info">
+                                    <h4>Node.js</h4>
+                                    <span class="cert-issuer">Desenvolvimento Backend</span>
+                                </div>
+                            </div>
+
+                            <!-- Certificate 2: Golang -->
+                            <div class="cert-card cert-card-modal" data-preview="../img/go.jpg" data-title="Golang - Certificado">
+                                <div class="cert-img-wrap">
+                                    <img src="../img/go.jpg" alt="Certificado Golang" class="cert-img">
+                                    <div class="cert-zoom-icon">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                                    </div>
+                                </div>
+                                <div class="cert-info">
+                                    <h4>Golang</h4>
+                                    <span class="cert-issuer">Linguagem Go</span>
+                                </div>
+                            </div>
+
+                            <!-- Certificate 3: AWS Cloud (com link do Credly) -->
+                            <a href="https://www.credly.com/badges/991b3e14-283d-46ee-8064-b03dc99ddabd" target="_blank" rel="noopener noreferrer" class="cert-card cert-card-link">
+                                <div class="cert-img-wrap cert-badge-wrap">
+                                    <img src="../img/awsbadgecloud.png" alt="AWS Cloud Badge" class="cert-img cert-badge-img">
+                                    <div class="cert-hover-icon">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    </div>
+                                </div>
+                                <div class="cert-info">
+                                    <div class="cert-title-row">
+                                        <h4>AWS Cloud</h4>
+                                        <span class="credly-badge-pill">Verificar</span>
+                                    </div>
+                                    <span class="cert-issuer">AWS Certified / Credly</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
                     <!-- Extra / Languages Banner -->
                     <div class="waterfall-card lang-pane">
                         <div class="lang-icon">
@@ -210,6 +265,22 @@
                 </div>
             </div>
         </main>
+    </div>
+
+    <!-- Certificate Lightbox Modal -->
+    <div id="cert-modal" class="cert-modal-backdrop" aria-hidden="true">
+        <div class="cert-modal-overlay"></div>
+        <div class="cert-modal-dialog">
+            <button class="cert-modal-close" id="cert-modal-close-btn" aria-label="Fechar">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="cert-modal-body">
+                <img id="cert-modal-img" src="" alt="Certificado em tamanho expandido" class="cert-modal-image">
+            </div>
+            <div class="cert-modal-caption">
+                <span id="cert-modal-title"></span>
+            </div>
+        </div>
     </div>
 
     <!-- Background Decoration -->

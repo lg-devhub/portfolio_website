@@ -67,4 +67,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const savedLang = localStorage.getItem('lang') || 'pt';
     updateLanguage(savedLang);
+
+    // Certificate Modal Lightbox Logic
+    const certModal = document.getElementById('cert-modal');
+    if (certModal) {
+        const certModalImg = document.getElementById('cert-modal-img');
+        const certModalTitle = document.getElementById('cert-modal-title');
+        const certModalClose = document.getElementById('cert-modal-close-btn');
+        const certModalOverlay = certModal.querySelector('.cert-modal-overlay');
+
+        const openModal = (src, title) => {
+            certModalImg.src = src;
+            certModalImg.alt = title || 'Certificado';
+            certModalTitle.textContent = title || '';
+            certModal.classList.add('active');
+            certModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeModal = () => {
+            certModal.classList.remove('active');
+            certModal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                if (!certModal.classList.contains('active')) {
+                    certModalImg.src = '';
+                }
+            }, 300);
+        };
+
+        document.querySelectorAll('.cert-card-modal').forEach(card => {
+            card.addEventListener('click', () => {
+                const previewSrc = card.getAttribute('data-preview');
+                const title = card.getAttribute('data-title');
+                if (previewSrc) openModal(previewSrc, title);
+            });
+        });
+
+        if (certModalClose) certModalClose.addEventListener('click', closeModal);
+        if (certModalOverlay) certModalOverlay.addEventListener('click', closeModal);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && certModal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    }
 });
